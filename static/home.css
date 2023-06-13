@@ -9,6 +9,8 @@
 body{
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
+    /* height: 100vh; */
+
 }
 
 
@@ -48,6 +50,7 @@ body{
 
 .container{
     display: flex;
+    height: 100vh;
 }
 
 /* left */
@@ -65,7 +68,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    height: 60%;
+    height: 70%;
 }
 
 .title{
