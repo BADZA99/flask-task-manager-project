@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    text-decoration: none;
+    color: crimson;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo{
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    color: crimson;
+    justify-self: flex-start;
+}
+
+.item-nav{
+    margin-left: auto;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    justify-self: center;
+}
+
+.item-nav a{
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+}
+
+.logout{
+    padding: 13px;
+    margin-left: auto;
+    border-radius: 9999px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+    background: black;
+    transition: all 0.3s ease;
+}
+
+/* sidebar */
+
+.sidebar{
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: #f1f1f1;
+    /* met un box shadow */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.userImg img{
+    margin-top: 30px;
+    width: 60px;
+}
+
+.userImg{
+    /* border: solid 1px black; */
+    text-align: center;
+}
+
+.userInfo{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.title{
+    position: relative;
+    top: 60px;
+    left: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.add{
+    padding-top: 60px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    background: #247BA0;
+    margin-left:30%;
+}
+
+/* bloc taches */
+
+.bloc-taches{
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    top: 100px;
+    left: 22%;
+    width: 75%;
+    background: #f1f1f1;
+    border: solid 1px black;
+    transition: all 0.3s ease;
+}
+
+.bloc-taches a{
+    text-decoration: none;
+    color: black;
+}
+
+.tache{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f1f1f1;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.titre{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: whitesmoke;
+    border-radius: 9999px;
+    background: #5DADE2 ;
+}
+
+.description{
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 15px;
+    font-weight: bold;
+    color: #605F5E;
+    border-radius: 5px;
+    /* background: #173753; */
+}
+
+.datexp{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #BEB0A7;
+    border-radius: 5px;
+}
+
+button{
+    border: none;
+}
+
+.btn-edit{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    background: #247BA0;
+}
+
+.btn-delete{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    background: #FB3640;
+}
+
+/* addform */
+
+.addform{
+     display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    transform: translate(-50%,-50%);
+    background: #f1f1f1;
+    border: solid 1px black;
+    transition: all 0.3s ease;
+}
+.btn-save{
+   
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    background: #247BA0;
+}
+
+
+
+.btn-exit{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    background: red;
+}
+
+/* editform */
+.editform {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    transform: translate(-50%,-50%);
+    background: #f1f1f1;
+    border: solid 1px black;
+    transition: all 0.3s ease;
+}
+
+.hide{
+    display: block;
+}
+

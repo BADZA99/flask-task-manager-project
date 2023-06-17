@@ -1,25 +1,7 @@
 from flask import Flask,render_template
-app= Flask(__name__)
 
+from routes import *
 
-@app.route('/')
-def index():
-    return render_template("base.html")
-
-
-
-
-@app.route('/base')
-def base():
-    return render_template("base.html")
-
-@app.route('/signin')
-def signin():
-    return render_template("signin.html")
-
-@app.route('/login')
-def login():
-    return render_template("login.html")
 
 if __name__== "__main__":
-    app.run()
+    app.run(port=5000,debug=True)
