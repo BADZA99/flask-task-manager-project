@@ -19,7 +19,7 @@
         <a href="acceuil">Home</a>
         <a href="http://">My tasks</a>
       </div>
-      <a href="http://" class="logout">log out</a>
+      <a href="/" class="logout">log out</a>
     </nav>
 
     <div class="sidebar">
@@ -28,130 +28,39 @@
           <img src="/static/images/user.png" alt="" />
         </div>
         <div class="userInfo">
-          <p class="username">username</p>
-          <p class="email">email</p>
+          <p class="username">{{data2[0][7]}}</p>
+          <p class="email">{{data2[0][6]}}</p>
         </div>
-        <button class="add">Add Task</button>
+        <a href="/addtask/{{data2[0]}}"><button class="add">Add Task</button></a>
       
       </div>
     </div>
 
     <h1 class="title">LA LISTE DE VOS TACHES</h1>
     <div class="bloc-taches">
+
+      {% for i in data2 %}
       <div class="tache">
-        <div class="titre">titre</div>
+        <div class="titre">{{i[2]}}</div>
         <div class="description">
-          description Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Repellat, animi.
+          {{i[4]}}
         </div>
-        <div class="datexp">10/10/22</div>
-        <button  class="btn-edit">Modify</button>
+        <div class="datexp">{{i[3]}}</div>
+        <a href="/edit"><button  class="btn-edit">Modify</button></a>
         <a href=""
           ><button type="button" class="btn-delete" name="delete">
             delete
           </button></a
         >
       </div>
-      <div class="tache">
-        <div class="titre">titre</div>
-        <div class="description">
-          description Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Repellat, animi.
-        </div>
-        <div class="datexp">10/10/22</div>
-        <a href=""
-          ><button type="button" class="btn-edit" name="edit">Modify</button></a
-        >
-        <a href=""
-          ><button type="button" class="btn-delete" name="delete">
-            delete
-          </button></a
-        >
-      </div>
-      <div class="tache">
-        <div class="titre">titre</div>
-        <div class="description">
-          description Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Repellat, animi.
-        </div>
-        <div class="datexp">10/10/22</div>
-        <button type="button" class="btn-edit" name="edit">Modify</button>
-          <button type="button" class="btn-delete" name="delete">
-            delete
-          </button>
-      </div>
-      <div class="tache">
-        <div class="titre">titre</div>
-        <div class="description">
-          description Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Repellat, animi.
-        </div>
-        <div class="datexp">10/10/22</div>
-        <a href=""
-          ><button type="button" class="btn-edit" name="edit">Modify</button></a
-        >
-        <a href=""
-          ><button type="button" class="btn-delete" name="delete">
-            delete
-          </button></a
-        >
-      </div>
-      <div class="tache">
-        <div class="titre">titre</div>
-        <div class="description">
-          description Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Repellat, animi.
-        </div>
-        <div class="datexp">10/10/22</div>
-        <a href=""
-          ><button type="button" class="btn-edit" name="edit">Modify</button></a
-        >
-        <a href=""
-          ><button type="button" class="btn-delete" name="delete">
-            delete
-          </button></a
-        >
-      </div>
-      <div class="tache">
-        <div class="titre">titre</div>
-        <div class="description">
-          description Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Repellat, animi.
-        </div>
-        <div class="datexp">10/10/22</div>
-        
-          <button type="button" class="btn-edit" name="edit">Modify</button></a>
-        
-          <button type="button" class="btn-delete" name="delete">
-            delete
-          </button>
-        
-      </div>
+      {% endfor %}
+      
+     
     </div>
 
-   <!-- un formulaire d'ajout de tache -->
-   <form action="" class="addform" id="#addmodal">
-    <label for="title">Titre:</label><br />
-    <input type="text" id="title" name="title" value="" /><br />
-    <label for="description">Description:</label><br />
-    <input type="text" id="description" name="description" value="" /><br />
-    <label for="datexp">Date d'expiration:</label><br />
-    <input type="date" id="datexp" name="datexp" value="" /><br /><br />
-    <button type="submit" class="btn-save">save</button>
-    <button class="btn-exit">exit</button>
-   </form>
 
-   <!-- un formulaire de modification -->
 
-    <form action="" class="editform" id="#editmodal">
-      <label for="title">Titre:</label><br />
-      <input type="text" id="title" name="title" value="" /><br />
-      <label for="description">Description:</label><br />
-      <input type="text" id="description" name="description" value="" /><br />
-      <label for="datexp">Date d'expiration:</label><br />
-      <input type="date" id="datexp" name="datexp" value="" /><br /><br />
-      <button type="submit" class="btn-save">modify</button>
-      <button class="btn-exit">exit</button>
+   
 
    <script>
      //add task
