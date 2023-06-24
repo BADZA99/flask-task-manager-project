@@ -1,7 +1,7 @@
 from flask import Flask,render_template,redirect,request,url_for
 from models import *
 app= Flask(__name__)
-error=0
+# error=0
 data = None
 @app.route('/')
 def home():
@@ -13,7 +13,7 @@ def home():
 def signin():
     global data
     if request.method=='POST':
-        addUser(email=request.form["email"],login1=request.form["username"],mdp=request.form["password"])
+        addUser(email=request.form["email"],login=request.form["username"],mdp=request.form["password"])
         # Handle POST Request here
         return redirect(url_for('login'))
     return render_template("signin.html")

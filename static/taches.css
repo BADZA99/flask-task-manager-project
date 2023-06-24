@@ -56,7 +56,13 @@ body{
     cursor: pointer;
     color: white;
     background: black;
+    text-decoration: none;
     transition: all 0.3s ease;
+}
+
+.logout:hover{
+    text-decoration: none;
+    color: white;   
 }
 
 /* sidebar */
@@ -113,14 +119,14 @@ body{
 /* bloc taches */
 
 .bloc-taches{
-    position: fixed;
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     top: 100px;
     left: 22%;
     width: 75%;
     background: #f1f1f1;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     transition: all 0.3s ease;
 }
 

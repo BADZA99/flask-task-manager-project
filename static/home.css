@@ -91,6 +91,11 @@ body{
     width: 200px;
 }
 
+.btn-container a:hover{
+    text-decoration: none;
+    color: #fafafa;
+}
+
 .btn{
     padding: 15px;
     /* border: 1px solid crimson; */
@@ -100,7 +105,13 @@ body{
     cursor: pointer;
     color: #fafafa;
     background: black;
+    text-decoration: none;
     transition: all 0.3s ease;
+}
+
+.btn:hover{
+    color: #fafafa;
+    text-decoration: none;
 }
 
 /* right */

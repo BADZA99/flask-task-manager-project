@@ -24,10 +24,10 @@ def get_connexion():
 
 
 ## creer un Etudiant
-def addUser(email,login1,mdp):
+def addUser(email,login,mdp):
     con,cur =get_connexion()
     requete ="INSERT INTO utilisateur(email,login,mdp) VALUES (%s,%s,%s)"
-    cur.execute(requete,(email,login1,mdp))
+    cur.execute(requete,(email,login,mdp))
     con.commit()
     print("utilisateur ajoute avec success !!!")
     con.close()    
