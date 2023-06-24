@@ -183,6 +183,8 @@ button{
     border-radius: 5px;
     padding: 5px;
     background: #247BA0;
+    cursor: pointer;
+
 }
 
 .btn-delete{
@@ -194,6 +196,7 @@ button{
     border-radius: 5px;
     padding: 5px;
     background: #FB3640;
+    cursor: pointer;
 }
 
 /* addform */

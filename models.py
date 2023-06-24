@@ -61,10 +61,10 @@ def readTasks(idUser):
 
 def readTask(id,idUser):
     con,cur =get_connexion()
-    requete ="SELECT * FROM tache,utilisateur where idT=%s and idUser=%s and idUser=idU"
+    requete ="SELECT * FROM tache,utilisateur where idt=%s and idu=%s and idUser=idU"
     cur.execute(requete,(id,idUser,))
     tache = cur.fetchone()
-    con.close() 
+    con.close()
     return tache
     
 def modifyTask(id,titre,description,date):
@@ -77,7 +77,7 @@ def modifyTask(id,titre,description,date):
 
 def deleteTask(id,idU):
     con,cur =get_connexion()
-    requete ="DELETE FROM tache where idT=%s and idUser=%s "
+    requete ="DELETE FROM tache where idt=%s and iduser=%s"
     cur.execute(requete,(id,idU))
     con.commit()
     print("SUPPRESSION fait avec success !!!")

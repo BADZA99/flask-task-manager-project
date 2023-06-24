@@ -1,12 +1,12 @@
 <!-- un formulaire de modification -->
 
-    <form action="" class="editform" id="#editmodal">
+    <form action="" class="editform" id="#editmodal" method="post">
       <label for="title">Titre:</label><br />
-      <input type="text" id="title" name="title" value="" /><br />
+      <input type="text" id="title" name="title" value="{{infotache[2]}}" /><br />
       <label for="description">Description:</label><br />
-      <input type="text" id="description" name="description" value="" /><br />
+      <input type="text" id="description" name="description" value="{{infotache[4]}}" /><br />
       <label for="datexp">Date d'expiration:</label><br />
-      <input type="date" id="datexp" name="datexp" value="" /><br /><br />
+      <input type="date" id="datexp" name="datexp" value="{{infotache[3]}}" /><br /><br />
       <button type="submit" class="btn-save">modify</button>
       <button class="btn-exit">exit</button>
     </form>

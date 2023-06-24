@@ -8,6 +8,7 @@ def home():
     global data
     return render_template("base.html")
 
+# INSCRIPTION
 @app.route('/signin',methods=['GET','POST'])
 def signin():
     global data
@@ -17,6 +18,7 @@ def signin():
         return redirect(url_for('login'))
     return render_template("signin.html")
 
+# CONNEXION
 @app.route('/login',methods=['GET','POST'])
 def login():
     global data
@@ -24,11 +26,9 @@ def login():
         info=VerifUser(login1=request.form["username"],mdp=request.form["password"])
         # Handle POST Request here
         if info:
-            data=info[0]
-            # userTask=readTasks(userId)
-            # print(data)
-            return render_template('taches.html',data=data)
-            # return redirect(url_for('taches'))
+            data=info
+            allUserTasks=readTasks(data[0])
+            return render_template('taches.html',data=data,data2=allUserTasks)
             
         else:
             error=1
@@ -37,15 +37,20 @@ def login():
           # return "<h1>MOT DE PASSE OU USERNAME INCORRECT</h1> <a href='/login'><h1>Retry</h1></a>"
     else:
         return render_template("login.html")
-
-
+    
+    
+# PAGE USER
 @app.route('/taches/<int:idUser>',methods=['GET','POST'])
 def taches(idUser):
     global data
+    print(idUser)
     data2=readTasks(idUser)
-    return render_template('affiche.html',data2=data2,data=data)
+    return render_template('taches.html',data2=data2,data=data)
+    return"erreur"
 
 
+
+# AJOUT
 @app.route('/addtask/<int:idUser>',methods=['GET','POST'])
 def addtask(idUser):
     global data
@@ -53,18 +58,38 @@ def addtask(idUser):
         print(idUser)
         addTask(idUser,titre=request.form['title'],description=request.form['description'],date=request.form['datexp'])
         data2=readTasks(idUser)
-        print(data2[0])
-        # Handle POST Request here
-        # if data== True:
         return render_template('taches.html',data2=data2,data=data)
-
     return render_template('addtask.html',data=data)
     # return render_template('addtask.html')
-
-@app.route('/edit')
-def edittask():
+    
+    
+# MODIFICATION 
+@app.route('/edit/<int:idUser>/<int:idTache>',methods=['GET','POST'])
+def edittask(idUser,idTache):
     global data
-    return render_template('edit.html')
+    # recuperer les infos de la tache en question
+    infotache=readTask(idTache,idUser)
+    print(infotache)
+    if request.method=='POST':
+        modifyTask(idTache,request.form['title'],request.form['description'],request.form['datexp'])
+        # recuperer a nouveau les taches de l'utilisateur
+        data2=readTasks(idUser)
+        return render_template('taches.html',data2=data2,data=data)
+        
+    # modifier la tache
+    
+    return render_template('edit.html',infotache=infotache)
+
+# SUPRESSION
+@app.route('/delete/<int:idUser>/<int:idTache>',methods=['GET','POST'])
+def deletetask(idUser,idTache):
+    global data
+    deleteTask(idTache,idUser)
+    # recuperer a nouveau les taches de l'utilisateur
+    data2=readTasks(idUser)
+    return render_template('taches.html',data2=data2,data=data)
+    
+    # return render_template('delete.html',data=data,idTache=idTache,idUser=idUser)
 
 
 

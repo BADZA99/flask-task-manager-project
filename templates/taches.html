@@ -28,10 +28,11 @@
           <img src="/static/images/user.png" alt="" />
         </div>
         <div class="userInfo">
-          <p class="username">{{data2[0][7]}}</p>
-          <p class="email">{{data2[0][6]}}</p>
+          <p>WELCOME</p>
+          <p class="username">{{data[2]}}</p>
+          <p class="email">{{data[1]}}</p>
         </div>
-        <a href="/addtask/{{data2[0]}}"><button class="add">Add Task</button></a>
+        <a href="/addtask/{{data[0]}}"><button class="add">Add Task</button></a>
       
       </div>
     </div>
@@ -46,8 +47,8 @@
           {{i[4]}}
         </div>
         <div class="datexp">{{i[3]}}</div>
-        <a href="/edit"><button  class="btn-edit">Modify</button></a>
-        <a href=""
+        <a href="/edit/{{data[0]}}/{{i[0]}}"><button  class="btn-edit">Modify</button></a>
+        <a href="/delete/{{data[0]}}/{{i[0]}}"
           ><button type="button" class="btn-delete" name="delete">
             delete
           </button></a
