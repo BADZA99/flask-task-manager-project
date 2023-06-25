@@ -71,9 +71,9 @@ body{
     position: fixed;
     top: 60px;
     left: 0;
-    width: 20%;
+    width: 15%;
     height: 100%;
-    background: #f1f1f1;
+    background: transparent;
     /* met un box shadow */
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
@@ -113,7 +113,7 @@ body{
     border-radius: 5px;
     padding: 5px;
     background: #247BA0;
-    margin-left:30%;
+    margin-left:40%;
 }
 
 /* bloc taches */
@@ -123,9 +123,9 @@ body{
     display: flex;
     flex-wrap: wrap;
     top: 100px;
-    left: 22%;
+    left: 20%;
     width: 75%;
-    background: #f1f1f1;
+    background: transparent;
     /* border: solid 1px black; */
     transition: all 0.3s ease;
 }
@@ -143,7 +143,7 @@ body{
     width: 250px;
     padding: 20px;
     border-radius: 10px;
-    background: #f1f1f1;
+    background: white;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
 }

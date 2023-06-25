@@ -1,12 +1,38 @@
-<!-- un formulaire de modification -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit page</title>
+    <link rel="stylesheet" href="/static/edit.css" />
+  </head>
+  <body>
+    <!-- un formulaire de modification -->
 
     <form action="" class="editform" id="#editmodal" method="post">
       <label for="title">Titre:</label><br />
-      <input type="text" id="title" name="title" value="{{infotache[2]}}" /><br />
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value="{{infotache[2]}}"
+      /><br />
       <label for="description">Description:</label><br />
-      <input type="text" id="description" name="description" value="{{infotache[4]}}" /><br />
+      <input
+        type="text"
+        id="description"
+        name="description"
+        value="{{infotache[4]}}"
+      /><br />
       <label for="datexp">Date d'expiration:</label><br />
-      <input type="date" id="datexp" name="datexp" value="{{infotache[3]}}" /><br /><br />
+      <input
+        type="date"
+        id="datexp"
+        name="datexp"
+        value="{{infotache[3]}}"
+      /><br /><br />
       <button type="submit" class="btn-save">modify</button>
-      <button class="btn-exit">exit</button>
+      <!-- <a href=""><button class="btn-exit">exit</button></a> -->
     </form>
+  </body>
+</html>

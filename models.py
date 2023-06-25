@@ -1,5 +1,6 @@
 import psycopg2
 
+# CONNECTION A LA BD POSTGRESQL
 def get_connexion():
     con=psycopg2.connect(
         database="flaskdb",

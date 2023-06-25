@@ -15,8 +15,11 @@ def signin():
     if request.method=='POST':
         addUser(email=request.form["email"],login=request.form["username"],mdp=request.form["password"])
         # Handle POST Request here
-        return redirect(url_for('login'))
+        # return redirect(url_for('login'))
+        return "<h1>COMPTE CREE AVEC SUCCES</h1> <a href='/login'><h1>Se connecter</h1></a> <a href='/'><h1>Acceuil</h1></a>"
+        
     return render_template("signin.html")
+    # return "<h1>une erreur s'est produite</h1> <a href='/signin'><h1>Reessayer</h1></a>"
 
 # CONNEXION
 @app.route('/login',methods=['GET','POST'])
@@ -29,12 +32,10 @@ def login():
             data=info
             allUserTasks=readTasks(data[0])
             return render_template('taches.html',data=data,data2=allUserTasks)
-            
         else:
-            error=1
-            return render_template('login.html',error=error)
+            # return render_template('login.html')
       
-          # return "<h1>MOT DE PASSE OU USERNAME INCORRECT</h1> <a href='/login'><h1>Retry</h1></a>"
+          return "<h1>MOT DE PASSE OU USERNAME INCORRECT</h1> <a href='/login'><h1>Reessayer</h1></a>"
     else:
         return render_template("login.html")
     
@@ -46,7 +47,6 @@ def taches(idUser):
     print(idUser)
     data2=readTasks(idUser)
     return render_template('taches.html',data2=data2,data=data)
-    return"erreur"
 
 
 
