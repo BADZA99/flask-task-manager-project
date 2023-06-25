@@ -89,7 +89,6 @@ def deletetask(idUser,idTache):
     data2=readTasks(idUser)
     return render_template('taches.html',data2=data2,data=data)
     
-    # return render_template('delete.html',data=data,idTache=idTache,idUser=idUser)
 
 
 
