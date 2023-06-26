@@ -1,7 +1,29 @@
 from flask import Flask,render_template,redirect,request,url_for
 from models import *
+
+# from flask import Flask, render_template
+# from flask_sqlalchemy import SQLAlchemy
+
+# app = Flask(__name__)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///postgres'  # Remplacez database.db par le nom de votre base de données
+# db = SQLAlchemy(app)
+
+# class User(db.Model): 
+#     def __init__(self, username, email):
+#         self.username = username
+#         self.email = email
+        
+#     def get_user(user_id):
+#         user = User.query.get(user_id)
+#         return user
+
+# @app.route('/users')
+# def users():
+#     # all_users = User.query.all()
+#     all_user=User.get_user(11)
+#     return render_template('users.html', all_users=all_users)
+
 app= Flask(__name__)
-# error=0
 data = None
 @app.route('/')
 def home():
@@ -19,7 +41,6 @@ def signin():
         return "<h1>COMPTE CREE AVEC SUCCES</h1> <a href='/login'><h1>Se connecter</h1></a> <a href='/'><h1>Acceuil</h1></a>"
         
     return render_template("signin.html")
-    # return "<h1>une erreur s'est produite</h1> <a href='/signin'><h1>Reessayer</h1></a>"
 
 # CONNEXION
 @app.route('/login',methods=['GET','POST'])
@@ -33,8 +54,6 @@ def login():
             allUserTasks=readTasks(data[0])
             return render_template('taches.html',data=data,data2=allUserTasks)
         else:
-            # return render_template('login.html')
-      
           return "<h1>MOT DE PASSE OU USERNAME INCORRECT</h1> <a href='/login'><h1>Reessayer</h1></a>"
     else:
         return render_template("login.html")

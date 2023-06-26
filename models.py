@@ -21,7 +21,6 @@ def get_connexion():
 
 # create_table()
 
-# creer la table tache avec iduser comme cle etrangere provenant de utilisateur (idU) ainsi que titre,
 
 
 ## creer un Etudiant
